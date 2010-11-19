@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../dependancies/jquery.js"></script>
+		<script src="../dependancies/ui.core.js"></script>
+		<script src="../dependancies/ui.widget.js"></script>
+		<script src="../dependancies/ui.button.js"></script>
+		<script src="../dependancies/ui.position.js"></script>
+		<script src="../dependancies/jquery.tmpl.js"></script>
+		<script src="../dependancies/jquery.glob.js"></script>
+		<script src="../ui.datepicker.lite.js"></script>
+		<!-- ui.datepicker.lite.html -->
+		<link rel="stylesheet" href="../dependancies/themes/base/jquery.ui.all.css">
+		<title>jQuery UI Datepicker Lite</title>
+	</head>
+	<body>
+		<div id="datepicker-inline" style="margin-bottom:100px"></div>
+		<input id="datepicker" type="text" />
+		<script>
+			jQuery(function($){
+				$("#datepicker-inline").datepicker();
+				$("#datepicker").datepicker();
+			});
+		</script>
+	</body>
+</html>

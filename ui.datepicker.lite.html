@@ -1,0 +1,48 @@
+<!doctype html>
+<head></head>
+<body>
+<script id="ui-datepicker-div" type="text/x-jquery-tmpl">
+	<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible">
+		<span data-tmpl-id="ui-datepicker-nav"></span>
+		<div class="ui-datepicker-title">
+			<span class="ui-datepicker-month">{{date.monthname}}</span><span class="ui-datepicker-year">{{date.year}}</span>
+		</div>
+		<table class="ui-datepicker-calendar">
+			<thead>
+				<tr>
+					{{each days}}
+						{{tmpl "#ui-datepicker-day-header"}}
+					{{/each}}
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					{{each days}}
+						{{tmpl "#ui-datepicker-day"}}
+					{{/each}}
+				</tr>
+			</tbody>
+		</table>
+		<div class="ui-datepicker-buttonpane ui-widget-content">
+			<button type="button" class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all">Today</button>
+			<button type="button" class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all">Done</button>
+		</div>
+	</div>
+</script>
+
+<script id="ui-datepicker-nav" type="text/x-jquery-tmpl">
+	<div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+		<a class="ui-datepicker-prev ui-corner-all">title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a>
+		<a class="ui-datepicker-next ui-corner-all" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+	</div>
+</script>
+
+<script id="ui-datepicker-day-header" type="text/x-jquery-tmpl">
+	<th class="ui-datepicker-week-end"><span title="{{date.fullname}}">{{date.shortname}}</span></th>
+</script>
+
+<script id="ui-datepicker-day" type="text/x-jquery-tmpl">
+	<td class="ui-datepicker-week-end ui-datepicker-other-month "> {{date.number}} </td>
+</script>
+</body>
+</html>
