@@ -1,5 +1,5 @@
 /*
- * jQuery UI Datepicker Lite
+ * jQuery Date
  *
  * Copyright 2010 Marc Grabanski
  * Licensed under the MIT license

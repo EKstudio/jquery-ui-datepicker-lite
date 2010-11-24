@@ -10,7 +10,7 @@
  *	jquery.ui.widget.js
  *	jquery.ui.position.js
  *	jquery.ui.button.js
- *	jquery.ui.date.js
+ *	jquery.date.js
  *	jquery.tmpl.js
  *  jquery.ui.datepicker.html
  */
