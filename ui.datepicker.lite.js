@@ -10,17 +10,24 @@
  *	jquery.ui.widget.js
  *	jquery.ui.position.js
  *	jquery.ui.button.js
+ *	jquery.ui.date.js
  *	jquery.tmpl.js
  *  jquery.ui.datepicker.html
  */
 (function( $, undefined ) {
 
+// production version will have the default template compiled into a string
+// then if you want to override the template you will be able to supply selector to get the template
+var templates;
+$.get("../ui.datepicker.lite.html", function(data){
+	templates = data;
+});
+
 $.widget( "ui.datepicker", {
 	options: {
 	},
 	_create: function() {
-		var self = this,
-			template;
+		var self = this;
 		self.element
 			.bind( "mousedown.datepicker", function( event ) {
 
@@ -28,10 +35,6 @@ $.widget( "ui.datepicker", {
 			.bind( "keydown.datepicker", function( event ) {
 
 			});
-			
-		$.get("../ui.datepicker.lite.html", function(data){
-			template = data;
-		});
 	},
 	_setOption: function( key, value ) {
 		$.Widget.prototype._setOption.apply( this, arguments );

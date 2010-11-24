@@ -10,7 +10,8 @@
 <body>
 	<script>
 	console.log( $.date().adjust("M", +3).print("yyyy-dd-MM") );
-	console.log( $.date("10, 1, 1984", "MM, dd, yyyy").adjust("Y", 5).print() );
+	console.log( $.date().adjust("M", +3).print() );
+	console.log( $.date("October 1, 1984", "MMMM dd, yyyy").adjust("M", 3).adjust("Y", 5).print() );
 	$.preferCulture("ar");
 	console.log( $.date().adjust("M", +3).print() );
 	</script>
