@@ -14,10 +14,6 @@ if (typeof($.culture) == "undefined") {
 	$.culture = $.cultures["default"];
 }
 
-function daysInMonth(year, month) {
-	
-}
-
 $.date = function ( datestring, formatstring ) {
 	var calendar = $.culture.calendar,
 		format = formatstring ? formatstring : calendar.patterns.d,
