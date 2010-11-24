@@ -14,10 +14,17 @@ if (typeof($.culture) == "undefined") {
 	$.culture = $.cultures["default"];
 }
 
-// year, month, day, hours, minutes, seconds, milliseconds
-$.date = function ( datestring ) {
-	var date = datestring ? $.parseDate(datestring) : new Date();
+$.date = function ( datestring, formatstring ) {
+	var format = formatstring ? formatstring : $.culture.calendar.patterns.d,
+		date = datestring ? $.parseDate(datestring, format) : new Date();
 	return {
+		format: function( formatstring ) {
+			if (formatstring) {
+				format = formatstring;
+				return this;
+			}
+			return format;
+		},
 		adjust: function( period, offset ) {
 			var month = period == "M" ? date.getMonth() + offset : date.getMonth(), 
 				year = period == "Y" ? date.getFullYear() + offset : date.getFullYear();
@@ -36,7 +43,7 @@ $.date = function ( datestring ) {
 			return date;
 		},
 		print: function( formatstring ) {
-			return formatstring ? $.format(date, formatstring) : $.format(date, $.culture.calendar.patterns.d);
+			return $.format(date, formatstring ? formatstring : format);
 		},
 		calendar: function() {
 			return $.culture.calendar;

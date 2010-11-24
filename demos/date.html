@@ -9,11 +9,10 @@
 </head>
 <body>
 	<script>
-	var date = $.date("10/1/1984");
-	console.log( date.print() );
-	console.log( date.adjust("M", +3).print() );
+	console.log( $.date().adjust("M", +3).print("yyyy-dd-MM") );
+	console.log( $.date("10, 1, 1984", "MM, dd, yyyy").adjust("Y", 5).print() );
 	$.preferCulture("ar");
-	console.log( date.print() );
+	console.log( $.date().adjust("M", +3).print() );
 	</script>
 </body>
 </html>
