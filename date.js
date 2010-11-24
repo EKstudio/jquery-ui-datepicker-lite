@@ -14,16 +14,20 @@ if (typeof($.culture) == "undefined") {
 	$.culture = $.cultures["default"];
 }
 
+function daysInMonth(year, month) {
+	
+}
+
 $.date = function ( datestring, formatstring ) {
-	var format = formatstring ? formatstring : $.culture.calendar.patterns.d,
+	var calendar = $.culture.calendar,
+		format = formatstring ? formatstring : calendar.patterns.d,
 		date = datestring ? $.parseDate(datestring, format) : new Date();
 	return {
-		format: function( formatstring ) {
+		setFormat: function( formatstring ) {
 			if (formatstring) {
 				format = formatstring;
-				return this;
-			}
-			return format;
+			}	
+			return this;
 		},
 		adjust: function( period, offset ) {
 			var month = period == "M" ? date.getMonth() + offset : date.getMonth(), 
@@ -39,14 +43,23 @@ $.date = function ( datestring, formatstring ) {
 			date = new Date(year, month, date.getDate());
 			return this;
 		},
+		daysInMonth: function(year, month){
+			year = year || date.getFullYear();
+			month = month || date.getMonth();
+			return 32 - new Date(year, month, 32).getDate();
+		},
 		date: function() {
 			return date;
 		},
-		print: function( formatstring ) {
+		format: function( formatstring ) {
 			return $.format(date, formatstring ? formatstring : format);
 		},
-		calendar: function() {
-			return $.culture.calendar;
+		calendar: function( newcalendar ) {
+			if (newcalendar) {
+				calendar = newcalendar;
+				return this;
+			}
+			return calendar;
 		}
 	}
 }
