@@ -6,12 +6,10 @@
  *
  *
  * Depends:
- *	jquery.js
  *	jquery.ui.core.js
  *	jquery.ui.widget.js
  *	jquery.ui.position.js
  *	jquery.ui.button.js
- *	jquery.glob.js
  *	jquery.tmpl.js
  *  jquery.ui.datepicker.html
  */

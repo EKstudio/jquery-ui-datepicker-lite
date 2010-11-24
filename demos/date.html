@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<script src="../dependancies/jquery.js"></script>
+	<script src="../dependancies/jquery.glob.js"></script>
+	<script src="../dependancies/jquery.glob.all.js"></script>
+	<script src="../ui.date.js"></script>
+	<title>jQuery UI Date Object</title>
+</head>
+<body>
+	<script>
+	var date = $.date("10/1/1984");
+	console.log( date.print() );
+	console.log( date.adjust("M", +3).print() );
+	$.preferCulture("ar");
+	console.log( date.print() );
+	</script>
+</body>
+</html>
