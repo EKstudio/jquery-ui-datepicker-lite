@@ -26,17 +26,10 @@ $.date = function ( datestring, formatstring ) {
 			return this;
 		},
 		adjust: function( period, offset ) {
-			var month = period == "M" ? date.getMonth() + offset : date.getMonth(), 
+			var day = period == "D" ? date.getDate() + offset : date.getDate(), 
+				month = period == "M" ? date.getMonth() + offset : date.getMonth(), 
 				year = period == "Y" ? date.getFullYear() + offset : date.getFullYear();
-			if (month > 11) {
-				month = month - 12;
-				year++;
-			}
-			if (month < 0) {
-				month = month + 11;
-				year--;
-			}
-			date = new Date(year, month, date.getDate());
+			date = new Date(year, month, day);
 			return this;
 		},
 		daysInMonth: function(year, month){

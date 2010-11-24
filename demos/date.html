@@ -11,7 +11,8 @@
 	<script>
 	console.log( $.date().adjust("M", +3).format("yyyy-dd-MM") ); // same as .setFormat("yyyy-dd-MM").format() 
 	console.log( $.date().adjust("M", +3).format() );
-	console.log( $.date("October 1, 1984", "MMMM dd, yyyy").adjust("M", 3).adjust("Y", 5).format() );
+	console.log( $.date().adjust("D", -3).format() );
+	console.log( $.date("October 1, 1984", "MMMM dd, yyyy").adjust("M", 3).adjust("Y", 5).adjust("D", -1).format() );
 	$.preferCulture("ar");
 	console.log( $.date().adjust("M", +3).format() );
 	</script>
