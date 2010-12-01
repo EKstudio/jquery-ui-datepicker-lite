@@ -1,4 +1,10 @@
-Please note that this project is in its early stages and is NOT even close to completed or ready for use. The date.js plugin works at this point so you can use that, but nothing else. Listed below are the project goals.
+Early Stages
+-------------
+
+Please note that this project is in its early stages and is NOT even close to completed or ready for use. 
+The date.js plugin is the first thing to come out of this project since I'm working on creating the building blocks before building the datepicker itself.
+
+Project goals are listed below...
 
 jQuery UI Datepicker Lite
 =============
