@@ -1,3 +1,5 @@
+Please note that this project is in its early stages and is NOT even close to completed or ready for use. The date.js plugin works at this point so you can use that, but nothing else. Listed below are the project goals.
+
 jQuery UI Datepicker Lite
 =============
 
